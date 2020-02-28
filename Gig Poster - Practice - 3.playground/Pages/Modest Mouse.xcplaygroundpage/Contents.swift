@@ -32,8 +32,66 @@ let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
 
 // Begin your solution here...
 // Background
+
+// Background
 canvas.fillColor = darkGrey
-canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
+
+canvas.rotate(by: 315)
+canvas.drawShapesWithBorders = false
+for n in 0...17 {
+    if n == 0 || n == 1 {
+        canvas.lineColor = deepYellow
+    } else {
+        canvas.lineColor = black
+    }
+    
+    canvas.drawLine(from: Point(x: 31.11*Double(n), y: 0.0), to: Point(x: 31.11*Double(n), y: 600.0), lineWidth: 16)
+}
+
+for m in 0...17 {
+    if m == 0 || m == 1 {
+        canvas.lineColor = deepYellow
+    } else {
+        canvas.lineColor = lightGrey
+    }
+    
+    canvas.drawLine(from: Point(x: -31.11*Double(m), y: 0.0), to: Point(x: -31.11*Double(m), y: 600.0), lineWidth: 16)
+}
+
+// Rotate back to draw the rectangle for background
+canvas.rotate(by: 45)
+var newArray: [Point] = []
+newArray.append(Point(x: 0, y: 400))
+newArray.append(Point(x: 0, y: 600))
+newArray.append(Point(x: 400, y:600))
+newArray.append(Point(x: 400, y: 400))
+
+canvas.drawCustomShape(with: newArray)
+
+
+//The coordinate used for rotated canvas
+//var array: [Point] = []
+//array.append(Point(x: -282.84, y: 282.84))
+//array.append(Point(x: -424.26, y: 424.26))
+//array.append(Point(x: -142.58, y: 800))
+//array.append(Point(x: 0.0, y: 565.69))
+//
+//canvas.drawCustomShape(with: array)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
